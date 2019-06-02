@@ -3,26 +3,26 @@
 cd ~/.ssh
 
 $ ls -al ~/.ssh
-# Спискок файлов в директории .ssh, если они есть
-# id_rsa.pub # Нам интересны эти два брата, точнее этот публичный код (паб)
-# id_rsa # Это для сверки с пабом
+Спискок файлов в директории .ssh, если они есть
+id_rsa.pub # Нам интересны эти два брата, точнее этот публичный код (паб)
+id_rsa # Это для сверки с пабом
 
 
 Если их нет, то будем генерить, после чего ласково попросят пароль, он должен быть сложным, в конечном итоге вводится он будет только один раз при старте сессии.
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-# Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
-# Enter passphrase (empty for no passphrase):
-# Enter same passphrase again:
+Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
 
 
 Кстати, пароль можно и поменять:
 $ ssh-keygen -p # Введете старый, а потом новый.
 
 Консоль выведет следующее:
-# Your identification has been saved in /Users/you/.ssh/id_rsa.
-# Your public key has been saved in /Users/you/.ssh/id_rsa.pub.
-# The key fingerprint is:
-# 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
+Your identification has been saved in /Users/you/.ssh/id_rsa.
+Your public key has been saved in /Users/you/.ssh/id_rsa.pub.
+The key fingerprint is:
+01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
 
 
 Теперь надо добавить ваши ключи в ssh-агент
