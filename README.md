@@ -51,6 +51,7 @@ Hi #{username}! You've successfully authenticated, but GitHub does not provide s
 $ git remote set-url origin git@github.com:USERNAME/OTHERREPOSITORY.git
 
 
+нужно ещё автоматически добавлять этот ключ в агент, сделать это можно так
 Add this command to your ~/.bashrc file, then logout and back in to take effect:
 
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
