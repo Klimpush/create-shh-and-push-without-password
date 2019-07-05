@@ -49,3 +49,13 @@ Hi #{username}! You've successfully authenticated, but GitHub does not provide s
 
 Если вы не пользовались SSH, то ваши уже существующие локальные репо будут работать по http/https, поэтому надо сменить адреса. Адреса удаленных репозиториев проверяются командой $ git remote -v. Для смены адресов git есть специальная команда: $ set-url, ввести следующее:
 $ git remote set-url origin git@github.com:USERNAME/OTHERREPOSITORY.git
+
+
+Add this command to your ~/.bashrc file, then logout and back in to take effect:
+
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+eval ssh-agent
+ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -l > /dev/null || ssh-add
