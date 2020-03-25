@@ -5,7 +5,7 @@ cd ~/.ssh
 $ ls -al ~/.ssh
 Спискок файлов в директории .ssh, если они есть
 id_rsa.pub
-# Нам интересны эти два брата, точнее этот публичный код (паб)
+#### Нам интересны эти два брата, точнее этот публичный код (паб)
 id_rsa # Это для сверки с пабом
 
 
@@ -18,7 +18,7 @@ Enter same passphrase again:
 
 Кстати, пароль можно и поменять:
 $ ssh-keygen -p
-# Введете старый, а потом новый.
+#### Введете старый, а потом новый.
 
 Консоль выведет следующее:
 Your identification has been saved in /Users/you/.ssh/id_rsa.
@@ -64,5 +64,5 @@ fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-ad
 
-#### Make Git store the username and password and it will never ask for them.
+### Make Git store the username and password and it will never ask for them.
 git config --global credential.helper store
